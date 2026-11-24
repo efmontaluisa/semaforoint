@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interfaz para la evaluación práctica de JavaScript y manipulación del DOM.">
+    <title>Simulador de Semáforo Inteligente</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <main class="contenedor">
+        <header class="encabezado">
+            <p class="etiqueta">Evaluación práctica · Programación Web</p>
+            <h1>Simulador de Semáforo Inteligente</h1>
+            <p class="subtitulo">Panel de control del sistema de señalización</p>
+        </header>
+
+        <section class="panel" aria-label="Simulador de semáforo">
+            <div class="zona-semaforo">
+                <h2>Señal de tránsito</h2>
+                <div class="estructura-semaforo" aria-label="Focos del semáforo">
+                    <div id="rojo" class="foco foco-rojo" aria-label="Foco rojo"></div>
+                    <div id="amarillo" class="foco foco-amarillo" aria-label="Foco amarillo"></div>
+                    <div id="verde" class="foco foco-verde" aria-label="Foco verde"></div>
+                </div>
+                <div class="poste" aria-hidden="true"></div>
+                <div class="base" aria-hidden="true"></div>
+            </div>
+
+            <div class="zona-controles">
+                <section class="tarjeta-estado" aria-label="Estado del semáforo">
+                    <h2>Estado actual</h2>
+                    <p id="estadoActual" class="valor-estado" role="status" aria-live="polite">Detenido</p>
+                    <p class="texto-ayuda">El estado cambiará al iniciar el simulador.</p>
+                </section>
+
+                <section class="tarjeta-contador" aria-label="Tiempo restante">
+                    <h2>Cuenta regresiva</h2>
+                    <output id="contador" class="numero-contador" aria-live="off">--</output>
+                    <span class="unidad">segundos restantes</span>
+                </section>
+
+                <section class="tarjeta-configuracion" aria-label="Configuración y controles">
+                    <h2>Configuración</h2>
+                    <label for="velocidad">Velocidad del semáforo</label>
+                    <select id="velocidad" name="velocidad">
+                        <option value="normal" selected>Normal (100 %)</option>
+                        <option value="rapida">Rápida (200 %)</option>
+                    </select>
+
+                    <div class="botones">
+                        <button id="btnIniciar" type="button" class="boton boton-iniciar">Iniciar</button>
+                        <button id="btnDetener" type="button" class="boton boton-detener">Detener</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="instrucciones" aria-label="Referencia de tiempos">
+            <h2>Duración de los estados (velocidad normal)</h2>
+            <div class="leyenda">
+                <p><span class="punto punto-rojo"></span>Rojo: <strong>5 segundos</strong></p>
+                <p><span class="punto punto-verde"></span>Verde: <strong>4 segundos</strong></p>
+                <p><span class="punto punto-amarillo"></span>Amarillo: <strong>2 segundos</strong></p>
+            </div>
+            <p class="nota">Secuencia prevista: rojo → verde → amarillo → rojo. Los controles no tienen funcionalidad hasta implementar JavaScript.</p>
+        </section>
+        <footer>Plantilla HTML + CSS · Actividad de desarrollo JavaScript</footer>
+    </main>
+</body>
+</html>
